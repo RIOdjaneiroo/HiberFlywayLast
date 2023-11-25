@@ -21,7 +21,7 @@ public class Main {
 
             // створюємо нового клієнта
             Client newClient = new Client();
-            newClient.setName("Venom5 junior");
+            newClient.setName("Venom6 junior");
 
             // створюємо планет
             Planet fromPlanet = new Planet();
@@ -33,6 +33,8 @@ public class Main {
             // створюємо квиток та вводимо клієнта, планети
             TicketCrudService ticketService = new TicketCrudService();
             Ticket newTicket = ticketService.createTicket(newClient, fromPlanet, toPlanet);
+
+            System.out.println("newTicket = " + newTicket);
 
             // завершення транзакції збереження змін в таблицях
             transaction.commit();

@@ -12,7 +12,7 @@ public class TicketCrudService {
 
     public Ticket createTicket(Client client, Planet planetFrom, Planet planetTo) {
         if (arePlanetsEqual(planetFrom, planetTo)) {
-            throw new IllegalArgumentException("From and To planets cannot be the same.");
+            throw new IllegalArgumentException("From and To planets cannot be the same. Планети не можуть бути однакові в одному квитку");
         }
 
         validatePlanetIdsExist(planetFrom.getId(), planetTo.getId());
@@ -22,7 +22,7 @@ public class TicketCrudService {
 
     public Ticket updateTicketById(Long ticketId, Client newClient, Planet newPlanetFrom, Planet newPlanetTo) {
         if (arePlanetsEqual(newPlanetFrom, newPlanetTo)) {
-            throw new IllegalArgumentException("From and To planets cannot be the same.");
+            throw new IllegalArgumentException("From and To planets cannot be the same. Планети не можуть бути однакові в одному квитку");
         }
 
         validatePlanetIdsExist(newPlanetFrom.getId(), newPlanetTo.getId());
@@ -35,7 +35,7 @@ public class TicketCrudService {
         Planet planetTo = planetService.getPlanetById(planetToId);
 
         if (planetFrom == null || planetTo == null) {
-            throw new IllegalArgumentException("One or both planets do not exist in the database.");
+            throw new IllegalArgumentException("planets do not exist in the database. планета відсутня у списку ");
         }
     }
 

@@ -21,7 +21,7 @@ public class Main {
 
             // створюємо нового клієнта
             Client newClient = new Client();
-            newClient.setName("Venom6 junior");
+            newClient.setName("Venom7 junior");
 
             // створюємо планет
             Planet fromPlanet = new Planet();
@@ -29,6 +29,7 @@ public class Main {
 
             Planet toPlanet = new Planet();
             toPlanet.setId("EARTH1");
+            //toPlanet.setId("MERCURY1");
 
             // створюємо квиток та вводимо клієнта, планети
             TicketCrudService ticketService = new TicketCrudService();
